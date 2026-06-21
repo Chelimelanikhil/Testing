@@ -1,0 +1,32 @@
+﻿@using Assignment.Helpers
+@using Assignment.Models.Responses
+@model ApiResponse<PagedResponse<BookResponse>>
+
+<h2>Books</h2>
+
+<table class="table table-bordered">
+
+    <thead>
+        <tr>
+            <th>ISBN</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Available</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var item in Model.Data.Items)
+        {
+            <tr>
+                <td>@item.ISBN</td>
+                <td>@item.Title</td>
+                <td>@item.Author</td>
+                <td>@item.AvailableCopies</td>
+            </tr>
+        }
+
+    </tbody>
+
+</table>

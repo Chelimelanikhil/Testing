@@ -1,0 +1,39 @@
+﻿@using Assignment.Models.Requests
+@model RegisterMemberRequest
+
+<h2>Register Member</h2>
+
+<form asp-action="Register">
+
+    <div class="mb-3">
+        <label>First Name</label>
+        <input asp-for="FirstName"
+               class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Last Name</label>
+        <input asp-for="LastName"
+               class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Email</label>
+        <input asp-for="Email"
+               class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Membership Type</label>
+        <select asp-for="MembershipType"
+                class="form-control">
+            <option>Standard</option>
+            <option>Premium</option>
+        </select>
+    </div>
+
+    <button class="btn btn-primary">
+        Register
+    </button>
+
+</form>

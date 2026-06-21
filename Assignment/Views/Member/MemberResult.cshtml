@@ -1,0 +1,24 @@
+﻿@model Assignment.Helpers.ApiResponse<Assignment.Models.Responses.MemberResponse>
+
+<h2>Member Registration Result</h2>
+
+@if (Model.Success)
+{
+    <div class="alert alert-success">
+        <h4>Member Registered Successfully</h4>
+
+        <p><strong>Member Id:</strong> @Model.Data.MemberId</p>
+        <p><strong>Name:</strong> @Model.Data.FullName</p>
+        <p><strong>Email:</strong> @Model.Data.Email</p>
+        <p><strong>Membership:</strong> @Model.Data.MembershipType</p>
+    </div>
+}
+else
+{
+    <div class="alert alert-danger">
+        @foreach (var error in Model.Errors)
+        {
+            <p>@error.Message</p>
+        }
+    </div>
+}

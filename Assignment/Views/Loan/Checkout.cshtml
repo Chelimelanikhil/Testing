@@ -1,0 +1,31 @@
+﻿@using Assignment.Models.Requests
+@model CheckoutBookRequest
+
+<h2>Checkout Book</h2>
+
+<form asp-action="Checkout">
+
+    <div class="mb-3">
+        <label>Member Id</label>
+        <input asp-for="MemberId"
+               class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>ISBN</label>
+        <input asp-for="ISBN"
+               class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Due Date</label>
+        <input asp-for="DueDate"
+               type="date"
+               class="form-control" />
+    </div>
+
+    <button class="btn btn-primary">
+        Checkout
+    </button>
+
+</form>

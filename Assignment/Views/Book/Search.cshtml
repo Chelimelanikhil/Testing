@@ -1,0 +1,24 @@
+﻿@using Assignment.Models.Requests
+@model SearchBooksRequest
+
+<h2>Search Books</h2>
+
+<form asp-action="Search">
+
+    <input asp-for="Title"
+           class="form-control mb-2"
+           placeholder="Title" />
+
+    <input asp-for="Author"
+           class="form-control mb-2"
+           placeholder="Author" />
+
+    <input asp-for="Genre"
+           class="form-control mb-2"
+           placeholder="Genre" />
+
+    <button class="btn btn-success">
+        Search
+    </button>
+
+</form>

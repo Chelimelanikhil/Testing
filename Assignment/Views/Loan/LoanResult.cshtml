@@ -1,0 +1,50 @@
+﻿@model Assignment.Helpers.ApiResponse<Assignment.Models.Responses.LoanResponse>
+
+<h2>Checkout Result</h2>
+
+@if (Model.Success)
+{
+    <div class="alert alert-success">
+
+        <h4>Book Checked Out Successfully</h4>
+
+        <p>
+            <strong>Loan Id:</strong>
+            @Model.Data.LoanId
+        </p>
+
+        <p>
+            <strong>Book:</strong>
+            @Model.Data.BookTitle
+        </p>
+
+        <p>
+            <strong>Member:</strong>
+            @Model.Data.MemberName
+        </p>
+
+        <p>
+            <strong>Checkout Date:</strong>
+            @Model.Data.CheckoutDate
+        </p>
+
+        <p>
+            <strong>Due Date:</strong>
+            @Model.Data.DueDate
+        </p>
+
+    </div>
+}
+else
+{
+    <div class="alert alert-danger">
+
+        <h4>Validation Errors</h4>
+
+        @foreach (var error in Model.Errors)
+        {
+            <p>@error.Message</p>
+        }
+
+    </div>
+}
